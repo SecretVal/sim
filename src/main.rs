@@ -43,7 +43,7 @@ fn main() -> Result<()> {
                     KeyCode::Char('k') => execute!(stdout, MoveUp(1))?,
                     KeyCode::Char('l') => execute!(stdout, MoveRight(1))?,
                     KeyCode::Char('i') => state.mode = Mode::Insert,
-                    _ => todo!(),
+                    _ => {}
                 },
                 _ => todo!(),
             },
@@ -58,9 +58,9 @@ fn main() -> Result<()> {
                                 execute!(stdout, MoveLeft(1), style::Print(" "), MoveLeft(1))?
                             }
                             KeyCode::Char(e) => execute!(stdout, style::Print(e))?,
-                            _ => todo!(),
+                            _ => {}
                         },
-                        _ => todo!(),
+                        _ => {}
                     }
                 }
                 state.mode = Mode::Normal;
